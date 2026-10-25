@@ -81,7 +81,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Sedna Banner][product-screenshot]](https://github.com/your_username/your_repo_name)
+[![Sedna Banner][product-screenshot]](images/sedna_banner.png)
 
 **🇧🇩 বাংলায়:**  
 এই রিপোজিটরিটি **Sedna (VulnHub)** মেশিনের জন্য একটি পূর্ণাঙ্গ Boot2Root পেনিট্রেশন টেস্টিং ওয়াকথ্রু এবং স্টাডি গাইড। এখানে ওয়েব সার্ভার এবং ইনফ্রাস্ট্রাকচার মিসকনফিগারেশন (যেমন: **BuilderEngine Arbitrary File Upload**, **Apache Tomcat WAR Deployment**, এবং **Jenkins Script Console**) কীভাবে এক্সপ্লয়েট করে রিমোট কোড এক্সিকিউশন (RCE) পাওয়া যায় তা দেখানো হয়েছে। পরবর্তীতে `chkrootkit 0.49` (CVE-2014-0476) এর দুর্বলতা কাজে লাগিয়ে কীভাবে লোকাল প্রিভিলেজ এস্কেলেশনের (Privilege Escalation) মাধ্যমে **Root** অ্যাক্সেস নেওয়া হয়, তার প্রতিটি ধাপ কমান্ড ও স্ক্রিনশটসহ আলোচনা করা হয়েছে।
@@ -245,6 +245,7 @@ Output: `uid=33(www-data) gid=33(www-data) groups=33(www-data)`
 ```bash
 nc -lvnp 4444
 ```
+![Netcat Reverse Shell1](images/nc_www_data1.png)
 
 এবং **Terminal 2** থেকে রিভার্স শেল পেলোড ট্রিগার করি (এখানে নিজের কালি মেশিনের আইপি দিতে হবে):
 ```bash
@@ -332,7 +333,7 @@ Output: `a10828bee17db751de4b936614558305`
 
 ---
 
-## ৭. এআই-অ্যাসিস্টেড অ্যাপ্রোচ (AI Integration)
+## ৭. Tools Based অ্যাপ্রোচ
 ম্যানুয়ালি এনুমারেশন করার পাশাপাশি অটোমেটেড টেমপ্লেট স্ক্যানার **Nuclei** ব্যবহার করে খুব দ্রুত মিসকনফিগারেশনগুলো বের করা সম্ভব:
 ```bash
 nuclei -u http://$TARGET -tags misconfig,exposure
